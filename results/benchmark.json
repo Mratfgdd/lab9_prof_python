@@ -1,0 +1,827 @@
+{
+ "system": {
+  "python": "3.12.10",
+  "numpy": "2.5.4",
+  "os": "Windows-11",
+  "cpu_count": 24,
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+ },
+ "profile": {
+  "total": 1.916,
+  "functions": {
+   "total_funds": [
+    1,
+    0.004,
+    0.004
+   ],
+   "<genexpr>": [
+    496216,
+    0.062,
+    0.062
+   ],
+   "accrue_one": [
+    100000,
+    1.504,
+    1.504
+   ],
+   "amount_statistics": [
+    1,
+    0.0,
+    0.099
+   ],
+   "accrue_interest": [
+    1,
+    0.039,
+    1.543
+   ],
+   "report_python": [
+    1,
+    0.134,
+    0.37
+   ],
+   "apply_operation": [
+    500000,
+    0.094,
+    0.094
+   ]
+  },
+  "memory_rows_mb": 66.9,
+  "memory_arrays_mb": 8.9,
+  "peak_mb": {
+   "report_python": 7.8,
+   "report_numpy": 31.7,
+   "accrue_interest": 3.8,
+   "accrue_numpy": 2.3
+  }
+ },
+ "interest": [
+  {
+   "experiment": "interest",
+   "dataset": "10000",
+   "method": "Python",
+   "workers": null,
+   "runs": [
+    0.1492,
+    0.1454,
+    0.1475,
+    0.1464,
+    0.1442
+   ],
+   "mean": 0.1466,
+   "speedup": 1.0
+  },
+  {
+   "experiment": "interest",
+   "dataset": "10000",
+   "method": "Threads",
+   "workers": 8,
+   "runs": [
+    0.1466,
+    0.1419,
+    0.1458,
+    0.1395,
+    0.1407
+   ],
+   "mean": 0.1429,
+   "speedup": 1.03
+  },
+  {
+   "experiment": "interest",
+   "dataset": "10000",
+   "method": "Processes",
+   "workers": 8,
+   "runs": [
+    0.3438,
+    0.3502,
+    0.3533,
+    0.3494,
+    0.3369
+   ],
+   "mean": 0.3467,
+   "speedup": 0.42
+  },
+  {
+   "experiment": "interest",
+   "dataset": "10000",
+   "method": "NumPy",
+   "workers": null,
+   "runs": [
+    0.0061,
+    0.0062,
+    0.0057,
+    0.0061,
+    0.0058
+   ],
+   "mean": 0.006,
+   "speedup": 24.49
+  },
+  {
+   "experiment": "interest",
+   "dataset": "100000",
+   "method": "Python",
+   "workers": null,
+   "runs": [
+    1.4494,
+    1.4669,
+    1.4535,
+    1.4637,
+    1.4564
+   ],
+   "mean": 1.458,
+   "speedup": 1.0
+  },
+  {
+   "experiment": "interest",
+   "dataset": "100000",
+   "method": "Threads",
+   "workers": 8,
+   "runs": [
+    1.4152,
+    1.5534,
+    1.3954,
+    1.395,
+    1.4199
+   ],
+   "mean": 1.4358,
+   "speedup": 1.02
+  },
+  {
+   "experiment": "interest",
+   "dataset": "100000",
+   "method": "Processes",
+   "workers": 8,
+   "runs": [
+    0.5873,
+    0.5553,
+    0.5668,
+    0.5569,
+    0.5825
+   ],
+   "mean": 0.5698,
+   "speedup": 2.56
+  },
+  {
+   "experiment": "interest",
+   "dataset": "100000",
+   "method": "NumPy",
+   "workers": null,
+   "runs": [
+    0.1837,
+    0.1834,
+    0.2024,
+    0.1752,
+    0.1841
+   ],
+   "mean": 0.1857,
+   "speedup": 7.85
+  },
+  {
+   "experiment": "interest",
+   "dataset": "400000",
+   "method": "Python",
+   "workers": null,
+   "runs": [
+    5.792,
+    5.8086,
+    5.8534,
+    6.0468,
+    5.8421
+   ],
+   "mean": 5.8686,
+   "speedup": 1.0
+  },
+  {
+   "experiment": "interest",
+   "dataset": "400000",
+   "method": "Threads",
+   "workers": 8,
+   "runs": [
+    5.7084,
+    5.7209,
+    5.7318,
+    6.8033,
+    5.6258
+   ],
+   "mean": 5.918,
+   "speedup": 0.99
+  },
+  {
+   "experiment": "interest",
+   "dataset": "400000",
+   "method": "Processes",
+   "workers": 8,
+   "runs": [
+    1.346,
+    1.3581,
+    1.3572,
+    1.3829,
+    1.3401
+   ],
+   "mean": 1.3568,
+   "speedup": 4.33
+  },
+  {
+   "experiment": "interest",
+   "dataset": "400000",
+   "method": "NumPy",
+   "workers": null,
+   "runs": [
+    0.6995,
+    0.6929,
+    0.7273,
+    0.7491,
+    0.6771
+   ],
+   "mean": 0.7092,
+   "speedup": 8.28
+  }
+ ],
+ "workers": [
+  {
+   "experiment": "workers",
+   "dataset": "100000",
+   "method": "Python",
+   "workers": null,
+   "runs": [
+    1.525,
+    1.5231,
+    1.5091,
+    1.5466,
+    1.5159
+   ],
+   "mean": 1.5239,
+   "speedup": 1.0
+  },
+  {
+   "experiment": "workers",
+   "dataset": "100000",
+   "method": "Threads 1",
+   "workers": 1,
+   "runs": [
+    1.5192,
+    1.5315,
+    1.5249,
+    1.5601,
+    1.5253
+   ],
+   "mean": 1.5322,
+   "speedup": 0.99
+  },
+  {
+   "experiment": "workers",
+   "dataset": "100000",
+   "method": "Processes 1",
+   "workers": 1,
+   "runs": [
+    1.6953,
+    1.692,
+    1.6907,
+    1.702,
+    1.69
+   ],
+   "mean": 1.694,
+   "speedup": 0.9
+  },
+  {
+   "experiment": "workers",
+   "dataset": "100000",
+   "method": "Threads 2",
+   "workers": 2,
+   "runs": [
+    1.4762,
+    1.4695,
+    1.4816,
+    1.4935,
+    1.4667
+   ],
+   "mean": 1.4775,
+   "speedup": 1.03
+  },
+  {
+   "experiment": "workers",
+   "dataset": "100000",
+   "method": "Processes 2",
+   "workers": 2,
+   "runs": [
+    0.9766,
+    0.9835,
+    0.9645,
+    0.9931,
+    0.982
+   ],
+   "mean": 0.9799,
+   "speedup": 1.56
+  },
+  {
+   "experiment": "workers",
+   "dataset": "100000",
+   "method": "Threads 4",
+   "workers": 4,
+   "runs": [
+    1.4672,
+    1.4818,
+    1.4815,
+    1.5048,
+    1.5002
+   ],
+   "mean": 1.4871,
+   "speedup": 1.02
+  },
+  {
+   "experiment": "workers",
+   "dataset": "100000",
+   "method": "Processes 4",
+   "workers": 4,
+   "runs": [
+    0.6528,
+    0.6489,
+    0.6432,
+    0.64,
+    0.7466
+   ],
+   "mean": 0.6663,
+   "speedup": 2.29
+  },
+  {
+   "experiment": "workers",
+   "dataset": "100000",
+   "method": "Threads 8",
+   "workers": 8,
+   "runs": [
+    1.5001,
+    1.4903,
+    1.4855,
+    1.5032,
+    1.486
+   ],
+   "mean": 1.493,
+   "speedup": 1.02
+  },
+  {
+   "experiment": "workers",
+   "dataset": "100000",
+   "method": "Processes 8",
+   "workers": 8,
+   "runs": [
+    0.5643,
+    0.5446,
+    0.5663,
+    0.5593,
+    0.5413
+   ],
+   "mean": 0.5552,
+   "speedup": 2.75
+  },
+  {
+   "experiment": "workers",
+   "dataset": "100000",
+   "method": "Threads 16",
+   "workers": 16,
+   "runs": [
+    1.5244,
+    1.4963,
+    1.5961,
+    1.5056,
+    1.4957
+   ],
+   "mean": 1.5236,
+   "speedup": 1.0
+  },
+  {
+   "experiment": "workers",
+   "dataset": "100000",
+   "method": "Processes 16",
+   "workers": 16,
+   "runs": [
+    0.8796,
+    0.8759,
+    1.0806,
+    0.9209,
+    0.8807
+   ],
+   "mean": 0.9275,
+   "speedup": 1.64
+  }
+ ],
+ "chunksize": [
+  {
+   "experiment": "chunksize",
+   "dataset": "10000",
+   "method": "Python",
+   "workers": null,
+   "runs": [
+    0.1557,
+    0.1528,
+    0.1496
+   ],
+   "mean": 0.1527,
+   "speedup": 1.0
+  },
+  {
+   "experiment": "chunksize",
+   "dataset": "10000",
+   "method": "chunksize 1",
+   "workers": 8,
+   "runs": [
+    1.6156,
+    1.6343,
+    1.6179
+   ],
+   "mean": 1.6226,
+   "speedup": 0.09
+  },
+  {
+   "experiment": "chunksize",
+   "dataset": "10000",
+   "method": "chunksize 10",
+   "workers": 8,
+   "runs": [
+    0.4361,
+    0.4314,
+    0.4276
+   ],
+   "mean": 0.4317,
+   "speedup": 0.35
+  },
+  {
+   "experiment": "chunksize",
+   "dataset": "10000",
+   "method": "chunksize 100",
+   "workers": 8,
+   "runs": [
+    0.3304,
+    0.3298,
+    0.3436
+   ],
+   "mean": 0.3346,
+   "speedup": 0.46
+  },
+  {
+   "experiment": "chunksize",
+   "dataset": "10000",
+   "method": "chunksize 1000",
+   "workers": 8,
+   "runs": [
+    0.3384,
+    0.3336,
+    0.3381
+   ],
+   "mean": 0.3367,
+   "speedup": 0.45
+  }
+ ],
+ "report": [
+  {
+   "experiment": "report",
+   "dataset": "50000",
+   "method": "Python",
+   "workers": null,
+   "runs": [
+    0.0111,
+    0.0113,
+    0.0137,
+    0.0112,
+    0.011
+   ],
+   "mean": 0.0116,
+   "speedup": 1.0
+  },
+  {
+   "experiment": "report",
+   "dataset": "50000",
+   "method": "Threads",
+   "workers": 8,
+   "runs": [
+    0.0159,
+    0.017,
+    0.0167,
+    0.0179,
+    0.0167
+   ],
+   "mean": 0.0169,
+   "speedup": 0.69
+  },
+  {
+   "experiment": "report",
+   "dataset": "50000",
+   "method": "Processes",
+   "workers": 8,
+   "runs": [
+    0.345,
+    0.3233,
+    0.3335,
+    0.3291,
+    0.3236
+   ],
+   "mean": 0.3309,
+   "speedup": 0.04
+  },
+  {
+   "experiment": "report",
+   "dataset": "50000",
+   "method": "multiprocessing.Process",
+   "workers": 8,
+   "runs": [
+    1.6663,
+    1.5674,
+    1.5854,
+    1.5582,
+    1.6276
+   ],
+   "mean": 1.601,
+   "speedup": 0.01
+  },
+  {
+   "experiment": "report",
+   "dataset": "50000",
+   "method": "NumPy",
+   "workers": null,
+   "runs": [
+    0.0058,
+    0.0062,
+    0.0056,
+    0.0057,
+    0.0056
+   ],
+   "mean": 0.0058,
+   "speedup": 2.01
+  },
+  {
+   "experiment": "report",
+   "dataset": "500000",
+   "method": "Python",
+   "workers": null,
+   "runs": [
+    0.1429,
+    0.1447,
+    0.1431,
+    0.1488,
+    0.1733
+   ],
+   "mean": 0.1506,
+   "speedup": 1.0
+  },
+  {
+   "experiment": "report",
+   "dataset": "500000",
+   "method": "Threads",
+   "workers": 8,
+   "runs": [
+    0.1941,
+    0.1963,
+    0.1926,
+    0.1967,
+    0.2055
+   ],
+   "mean": 0.197,
+   "speedup": 0.76
+  },
+  {
+   "experiment": "report",
+   "dataset": "500000",
+   "method": "Processes",
+   "workers": 8,
+   "runs": [
+    0.437,
+    0.4456,
+    0.4497,
+    0.4444,
+    0.4554
+   ],
+   "mean": 0.4464,
+   "speedup": 0.34
+  },
+  {
+   "experiment": "report",
+   "dataset": "500000",
+   "method": "multiprocessing.Process",
+   "workers": 8,
+   "runs": [
+    1.6979,
+    1.6876,
+    1.6677,
+    2.0953,
+    1.7174
+   ],
+   "mean": 1.7732,
+   "speedup": 0.08
+  },
+  {
+   "experiment": "report",
+   "dataset": "500000",
+   "method": "NumPy",
+   "workers": null,
+   "runs": [
+    0.0725,
+    0.0713,
+    0.0706,
+    0.0746,
+    0.0743
+   ],
+   "mean": 0.0727,
+   "speedup": 2.07
+  },
+  {
+   "experiment": "report",
+   "dataset": "2000000",
+   "method": "Python",
+   "workers": null,
+   "runs": [
+    0.7858,
+    0.7867,
+    0.7975,
+    0.8,
+    0.8367
+   ],
+   "mean": 0.8013,
+   "speedup": 1.0
+  },
+  {
+   "experiment": "report",
+   "dataset": "2000000",
+   "method": "Threads",
+   "workers": 8,
+   "runs": [
+    0.9995,
+    0.9639,
+    0.9711,
+    0.9676,
+    0.979
+   ],
+   "mean": 0.9762,
+   "speedup": 0.82
+  },
+  {
+   "experiment": "report",
+   "dataset": "2000000",
+   "method": "Processes",
+   "workers": 8,
+   "runs": [
+    1.0747,
+    1.0524,
+    1.0475,
+    1.0496,
+    1.0529
+   ],
+   "mean": 1.0554,
+   "speedup": 0.76
+  },
+  {
+   "experiment": "report",
+   "dataset": "2000000",
+   "method": "multiprocessing.Process",
+   "workers": 8,
+   "runs": [
+    2.3148,
+    2.2825,
+    2.2809,
+    2.3208,
+    2.3192
+   ],
+   "mean": 2.3036,
+   "speedup": 0.35
+  },
+  {
+   "experiment": "report",
+   "dataset": "2000000",
+   "method": "NumPy",
+   "workers": null,
+   "runs": [
+    0.343,
+    0.3418,
+    0.3406,
+    0.3476,
+    0.3513
+   ],
+   "mean": 0.3449,
+   "speedup": 2.32
+  }
+ ],
+ "to_arrays": {
+  "50000": 0.0076,
+  "500000": 0.0894,
+  "2000000": 0.3309
+ },
+ "io": [
+  {
+   "experiment": "io",
+   "dataset": "latency 0.0",
+   "method": "Sequential",
+   "workers": null,
+   "runs": [
+    0.4259,
+    0.4214,
+    0.4236,
+    0.4306,
+    0.4252
+   ],
+   "mean": 0.4254,
+   "speedup": 1.0
+  },
+  {
+   "experiment": "io",
+   "dataset": "latency 0.0",
+   "method": "Threads",
+   "workers": 8,
+   "runs": [
+    0.4057,
+    0.3918,
+    0.3918,
+    0.4013,
+    0.3942
+   ],
+   "mean": 0.397,
+   "speedup": 1.07
+  },
+  {
+   "experiment": "io",
+   "dataset": "latency 0.0",
+   "method": "Processes",
+   "workers": 8,
+   "runs": [
+    0.449,
+    0.4517,
+    0.4503,
+    0.45,
+    0.4448
+   ],
+   "mean": 0.4492,
+   "speedup": 0.95
+  },
+  {
+   "experiment": "io",
+   "dataset": "latency 0.1",
+   "method": "Sequential",
+   "workers": null,
+   "runs": [
+    1.2252,
+    1.2284,
+    1.2221,
+    1.2252,
+    1.2294
+   ],
+   "mean": 1.2261,
+   "speedup": 1.0
+  },
+  {
+   "experiment": "io",
+   "dataset": "latency 0.1",
+   "method": "Threads",
+   "workers": 8,
+   "runs": [
+    0.4863,
+    0.4907,
+    0.4906,
+    0.4842,
+    0.4829
+   ],
+   "mean": 0.4869,
+   "speedup": 2.52
+  },
+  {
+   "experiment": "io",
+   "dataset": "latency 0.1",
+   "method": "Processes",
+   "workers": 8,
+   "runs": [
+    0.5368,
+    0.5439,
+    0.5384,
+    0.5602,
+    0.5381
+   ],
+   "mean": 0.5435,
+   "speedup": 2.26
+  }
+ ],
+ "locking": {
+  "lost_unsafe": [
+   6191716,
+   5043657,
+   19676982,
+   14349233,
+   13960218
+  ],
+  "lost_locked": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "overhead": {
+   "без Lock": 0.1225,
+   "з Lock": 0.1071
+  }
+ },
+ "cache": {
+  "cold_ms": 10.16,
+  "warm_us": 0.05,
+  "requests": 500,
+  "hits": 377,
+  "misses": 123,
+  "with_cache": 1.45,
+  "without_cache": 5.85
+ },
+ "seconds": 346.8
+}
