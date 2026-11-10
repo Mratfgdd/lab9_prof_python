@@ -1,44 +1,75 @@
-# Bank Perf: profiling and optimization
+# Student Manager (лабораторна робота №9)
 
-Лабораторна робота №9 з дисципліни «Професійний Python»: «Паралельність,
-багатопроцесність та оптимізація». Варіант 4: система банківських рахунків.
+Паралельність, багатопроцесність та оптимізація. Варіант 1 – система обліку
+студентів: проєкт `student_manager` з ЛР1 (`Student` з полями `first_name`,
+`last_name`, `group`, `average_grade`; додавання й перегляд студентів, пошук,
+пошук за групою, найкращий студент, середній бал групи) доповнений
+профілюванням і оптимізацією на наборах до 400 000 студентів.
 
-Журнал банку (100 000+ рахунків, 500 000+ операцій) профілюється і оптимізується:
-перерахунок балансів за історією з забороною від'ємного балансу, загальна сума коштів,
-оборот, статистика операцій і нарахування відсотків із щоденною капіталізацією.
+## Вимоги
 
-## Installation
+Python 3.11+, NumPy 1.26+
+
+## Встановлення
 
 ```
 python -m venv .venv
 .venv\Scripts\activate
-python -m pip install -e ".[test]"
+python -m pip install -e ".[dev]"
 ```
 
-## Run
+## Запуск
 
 ```
-bank-perf profile          # cProfile пакетної обробки «кінця періоду», bottleneck
-bank-perf memory           # tracemalloc: список кортежів проти масивів NumPy, пік пам'яті
-bank-perf race             # race condition без Lock і з Lock (threading)
-bank-perf cache            # lru_cache виписок: cold/warm, hit/miss, invalidation
-python benchmarks/benchmark.py   # усі експерименти -> results/benchmark.json, .csv
-pytest -v
+student-manager                      базові можливості (приклад ЛР1)
+student-manager profile              cProfile повного звіту (100 000 студентів)
+student-manager memory               tracemalloc: пік пам'яті
+student-manager race                 race condition і Lock
+student-manager cache                кеш статистики групи та інвалідація
+python benchmarks/benchmark.py       повний benchmark -> results/
 ```
 
-## Structure
+## Тести
 
 ```
-src/bank_perf/analytics.py    baseline (Python loops), шарди для паралельних версій
-src/bank_perf/parallel.py     ThreadPoolExecutor, ProcessPoolExecutor, multiprocessing.Process
-src/bank_perf/vectorized.py   NumPy-версії
-src/bank_perf/journals.py     CSV-журнали: послідовне і паралельне читання (I/O-bound)
-src/bank_perf/shared.py       спільний рахунок у потоках: race condition і Lock
-src/bank_perf/ledger.py       lru_cache виписок з інвалідацією
-src/bank_perf/profiling.py    cProfile, tracemalloc, perf_counter
-benchmarks/benchmark.py       benchmark framework
+pytest -v --cov=student_manager --cov-branch --cov-report=term-missing --cov-report=html
 ```
 
-## Author
+Поріг покриття – 90 % (`fail_under` у `pyproject.toml`).
 
-Student: Левандівський Назар
+## Структура проєкту
+
+```
+src/student_manager/
+    models.py        Student (ЛР1) із перевіркою полів
+    repositories.py  StudentRepository у пам'яті
+    services.py      функції ЛР1 і StudentService із кешем статистики груп
+    analytics.py     baseline на Python: статистика, групи, рейтинг, індекси
+    vectorized.py    NumPy-версії (колонки масивів)
+    parallel.py      ThreadPoolExecutor, ProcessPoolExecutor, Thread, Process
+    loaders.py       I/O: запис і паралельне завантаження файлів студентів
+    shared.py        спільний лічильник: race condition і Lock
+    profiling.py     cProfile, tracemalloc, timeit, perf_counter, speedup
+    main.py          консольні команди
+tests/               unit-тести за модулями
+benchmarks/          benchmark.py
+results/             benchmark.json, benchmark.csv, результати pytest
+report/              генератор PDF-звіту
+```
+
+## Що вимірюється
+
+| Операція | Реалізації |
+| --- | --- |
+| статистика (середній, min, max, std) | Python, потоки, потоки + Lock, процеси, NumPy |
+| статистика кожної групи | Python, потоки, процеси, NumPy |
+| рейтинг, пошук за групою | Python, NumPy |
+| рейтингові індекси (CPU-bound) | Python, потоки, процеси, `multiprocessing.Process`, NumPy |
+| завантаження 8 файлів (I/O-bound) | послідовно, потоки, процеси |
+| статистика групи | без кешу, `lru_cache` + версія групи (invalidation) |
+
+Результати й висновки – у звіті `Звіт_ЛР9_Левандівський.pdf`.
+
+## Автор
+
+Левандівський Назар

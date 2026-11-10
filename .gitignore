@@ -4,13 +4,13 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
 .idea/
 .vscode/
 dist/
 build/
 *.egg-info/
 .env
-*.db
-*.db-journal
-*.db-wal
-*.db-shm
+report/report.html
